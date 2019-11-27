@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_gray"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="50dp"-->
+    <!--        android:layout_gravity="center_vertical|center_horizontal"-->
+    <!--        android:layout_marginTop="0dp"-->
+    <!--        android:background="@color/lime_green"-->
+    <!--        android:orientation="horizontal">-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/charge"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:layout_marginStart="40dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:contentDescription="@string/충전"-->
+    <!--            android:src="@drawable/ic_battery_unknown" />-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/calender"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:layout_marginStart="60dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:src="@drawable/ic_alarm"-->
+    <!--            tools:ignore="ContentDescription,RtlHardcoded" />-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/running"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:layout_marginStart="60dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:src="@drawable/ic_directions_run"-->
+    <!--            tools:ignore="ContentDescription" />-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/bell"-->
+    <!--            android:layout_width="40dp"-->
+    <!--            android:layout_height="30dp"-->
+    <!--            android:layout_marginStart="60dp"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:contentDescription="@string/알림"-->
+    <!--            android:src="@drawable/ic_local_dining" />-->
+    <!--    </LinearLayout>-->
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="#81E0A2" />
+
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="#84ECA8" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#84ECA8"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+
+                    <ImageView
+                        android:id="@+id/view"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginTop="20dp"
+                        android:contentDescription="@string/gage50"
+                        android:src="@drawable/gage50" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:text="@string/_1_500"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/muscle_main"
+                    android:layout_width="380dp"
+                    android:layout_height="300dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/figure_title"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="근육 피로도" />
+
+
+                        <include
+                            layout="@layout/organization_page"
+                            android:layout_width="200dp"
+                            android:layout_height="180dp"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="55dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/figure_dit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/percent"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/figure_dit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/figure_dit"
+                            android:text="%" />
+
+                        <TextView
+                            android:id="@+id/dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/percent"
+                            android:layout_marginStart="170dp"
+                            android:layout_toEndOf="@+id/percent"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/dot_dit"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/dot"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/dot"
+                            android:text="@string/kg" />
+
+
+                        <TextView
+                            android:id="@+id/ditdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/dot_dit"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/dot_dit"
+                            android:text="10"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/di"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ditdit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/ditdit"
+                            android:text="Day" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/button1"
+                    android:layout_width="380dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/routin_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="11dp"
+                            android:src="@drawable/dumbbell"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/routin_name"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/routin_icon"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/routin_icon"
+                            android:text="루틴" />
+
+                        <TextView
+                            android:id="@+id/recent_routin_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/routin_name"
+                            android:layout_alignBottom="@+id/routin_name"
+                            android:layout_marginStart="210dp"
+                            android:layout_toEndOf="@+id/routin_name"
+                            android:gravity="center"
+                            android:text="@string/recent_routin"
+                            android:textColor="@android:color/black"
+                            android:textSize="12dp" />
+
+                        <ImageView
+                            android:id="@+id/routin_go"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/recent_routin_text"
+                            android:layout_alignBottom="@+id/recent_routin_text"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/recent_routin_text"
+                            android:src="@drawable/play_button" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/Volume_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/Volume"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/Volume_edit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/Volume_edit"
+                            android:text="Volume" />
+
+                        <TextView
+                            android:id="@+id/edit_kg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/Volume"
+                            android:layout_marginStart="170dp"
+                            android:layout_toEndOf="@+id/Volume"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/KG"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/edit_kg"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/edit_kg"
+                            android:text="@string/kg" />
+
+
+                        <TextView
+                            android:id="@+id/activity_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/KG"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/KG"
+                            android:text="10"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/day"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/activity_time"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/activity_time"
+                            android:text="/Day" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/button2"
+                    android:layout_width="380dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/Food_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="11dp"
+                            android:src="@drawable/fork"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/Food_title"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/Food_icon"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/Food_icon"
+                            android:text="음식" />
+
+                        <TextView
+                            android:id="@+id/Food_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/Food_title"
+                            android:layout_alignBottom="@+id/Food_title"
+                            android:layout_marginStart="210dp"
+                            android:layout_toEndOf="@+id/Food_title"
+                            android:gravity="center"
+                            android:text="@string/recent_routin"
+                            android:textColor="@android:color/black"
+                            android:textSize="12dp" />
+
+                        <ImageView
+                            android:id="@+id/Food_go"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/Food_add"
+                            android:layout_alignBottom="@+id/Food_add"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/Food_add"
+                            android:src="@drawable/play_button" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/kcal_edit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/kcal"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/kcal_edit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/kcal_edit"
+                            android:text="/1610 kacl" />
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/button3"
+                    android:layout_width="380dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/sleep_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="11dp"
+                            android:src="@drawable/moon"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/sleep_title"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/sleep_icon"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/sleep_icon"
+                            android:text="수면" />
+
+                        <TextView
+                            android:id="@+id/sleep_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/sleep_title"
+                            android:layout_alignBottom="@+id/sleep_title"
+                            android:layout_marginStart="210dp"
+                            android:layout_toEndOf="@+id/sleep_title"
+                            android:gravity="center"
+                            android:text="@string/recent_routin"
+                            android:textColor="@android:color/black"
+                            android:textSize="12dp" />
+
+                        <ImageView
+                            android:id="@+id/sleep_go"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/sleep_check"
+                            android:layout_alignBottom="@+id/sleep_check"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/sleep_check"
+                            android:src="@drawable/play_button" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/sleep_hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/sleep_hour_dit"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/sleep_hour"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/sleep_hour"
+                            android:text="시간" />
+
+                        <TextView
+                            android:id="@+id/sleep_min"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/sleep_hour_dit"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/sleep_hour_dit"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/sleep_min_dit"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/sleep_min"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/sleep_min"
+                            android:text="분" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/button4"
+                    android:layout_width="380dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/heart_icon"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="11dp"
+                            android:src="@drawable/heartbeat"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/heart_title"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/heart_icon"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_toEndOf="@+id/heart_icon"
+                            android:text="심박수" />
+
+                        <TextView
+                            android:id="@+id/heart_check"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/heart_title"
+                            android:layout_alignBottom="@+id/heart_title"
+                            android:layout_marginStart="200dp"
+                            android:layout_toEndOf="@+id/heart_title"
+                            android:gravity="center"
+                            android:text="@string/recent_routin"
+                            android:textColor="@android:color/black"
+                            android:textSize="12dp" />
+
+                        <ImageView
+                            android:id="@+id/heart_go"
+                            android:layout_width="10dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignTop="@+id/heart_check"
+                            android:layout_alignBottom="@+id/heart_check"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/heart_check"
+                            android:src="@drawable/play_button" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/heart_hour"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/heart_min"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/heart_hour"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/heart_hour"
+                            android:text="시간" />
+
+                        <TextView
+                            android:id="@+id/heart_dit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/heart_min"
+                            android:layout_marginStart="15dp"
+                            android:layout_toEndOf="@+id/heart_min"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/heart_min_dit"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/heart_dit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/heart_dit"
+                            android:text="분" />
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="380dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/button_background"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/grove_charge_title"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="15dp"
+                            android:text="Connect" />
+
+
+                        <ImageView
+                            android:id="@+id/left_groves"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginStart="40dp"
+                            android:src="@drawable/left_groves"
+                            />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_alignBottom="@+id/left_groves"
+                            android:layout_toEndOf="@+id/left_groves"
+                            android:src="@drawable/on_right_groves"
+                            />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10dp"
+
+                        >
+                        <!--추후에 수치를 동적으로 할당-->
+                        <TextView
+                            android:id="@+id/charge_percent_dit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:id="@+id/charge_percent"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/charge_percent_dit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/charge_percent_dit"
+                            android:text="%" />
+
+                        <TextView
+                            android:id="@+id/dot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/percent"
+                            android:layout_marginStart="170dp"
+                            android:layout_toEndOf="@+id/percent"
+                            android:text="0"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+
+                        <TextView
+                            android:id="@+id/dot_dit"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_alignBottom="@+id/dot"
+                            android:layout_toEndOf="@+id/dot"
+                            android:text="@string/kg" />
+
+
+                        <TextView
+                            android:id="@+id/ditdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/dot_dit"
+                            android:layout_marginStart="10dp"
+                            android:layout_toEndOf="@+id/dot_dit"
+                            android:text="10"
+                            android:textColor="#212121"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/di"
+                            style="@style/MainTitleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@+id/ditdit"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/ditdit"
+                            android:text="Day" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/main_maker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="60dp"
+                    android:gravity="center"
+                    android:text="Made by J.L.T"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:background="@color/teal_67"-->
+    <!--        android:orientation="horizontal">-->
+
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView1"-->
+    <!--            android:layout_width="45dp"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:layout_marginStart="60dp"-->
+    <!--            android:layout_marginLeft="60dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:src="@drawable/ic_home"-->
+    <!--            tools:ignore="ContentDescription" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView"-->
+    <!--            android:layout_width="45dp"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:layout_marginStart="80dp"-->
+    <!--            android:layout_marginLeft="80dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:src="@drawable/ic_person"-->
+    <!--            tools:ignore="ContentDescription" />-->
+
+    <!--        <ImageView-->
+    <!--            android:id="@+id/imageView3"-->
+    <!--            android:layout_width="45dp"-->
+    <!--            android:layout_height="35dp"-->
+    <!--            android:layout_marginStart="80dp"-->
+    <!--            android:layout_marginLeft="80dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:src="@drawable/ic_settings"-->
+    <!--            tools:ignore="ContentDescription" />-->
+    <!--    </LinearLayout>-->
+
+
+

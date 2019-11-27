@@ -1,0 +1,2 @@
+include ':app', ':folding-cell', ':folding-cell-simple-example', ':folding-cell-listview-example', ':build.gradle(folding)', ':MPChartLib', ':slidinglibrary'
+rootProject.name='1818'
